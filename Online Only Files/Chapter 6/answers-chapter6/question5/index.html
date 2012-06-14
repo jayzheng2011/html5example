@@ -1,0 +1,21 @@
+<html>
+<head></head>
+<body>
+    <script src="js/raphael-min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var paper = Raphael(0, 0, 1200, 800);
+				
+				var triangle = paper.path("m102.5,244.5l93,-142l80,140l-173,2z")
+
+				var squarePath = "M100 100 h120 v120 h-120 v-120 z";
+				var circlePath = "M152,157l29,-18l35,-7l33,1l25,9l18,16l16,29l3,32l-7,27l-16,18l-27,18l-42,5l-27,-7l-33,-12l-16,-23l-5,-25l0,-23l14,-39z";
+				var trianglePath = "m102.5,244.5l93,-142l80,140l-173,2z"
+				console.log(triangle);
+				triangle.animate({
+					"30%": {path:squarePath},
+					"60%": {path:circlePath},
+					"90%": {path:trianglePath}
+				}, 5000);
+    </script>
+</body>
+</html>

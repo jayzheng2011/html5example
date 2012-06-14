@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Snowman Three.js Demo</title>
+		<script src="../Three.js"></script>
+		<script src="../zepto.min.js"></script>
+		<script src="../RequestAnimationFrame.js"></script>
+	</head>
+	<body>
+		<div id="container"/>
+		<script type="text/javascript">
+			var camera, scene, renderer, materials;
+		  var mesh;
+			function init() {
+				
+				scene = new THREE.Scene();
+				loadModel();
+			}
+			
+			function loadModel() {
+				var loader = new THREE.JSONLoader();
+				loader.load( {model: "cube.js", callback: createScene1 });
+				
+			}
+			
+			function createScene1(geometry) {
+				var materials = geometry.materials;
+				console.log(materials);
+				alert("Retrieved Materials. Check console.");
+			}			
+			init();
+			
+		</script>
+		
+	<body>
+</html>

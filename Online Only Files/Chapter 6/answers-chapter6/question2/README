@@ -1,0 +1,1 @@
+Change line 29 in Card.js to point to a relative or absolute path to an image. That could be an image in your images directory or an image on the Internet.

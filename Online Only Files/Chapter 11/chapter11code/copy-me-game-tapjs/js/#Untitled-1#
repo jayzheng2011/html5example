@@ -1,0 +1,13 @@
+CACHE MANIFEST
+#Manifest with all sections
+CACHE:
+/game.css
+/Game.js
+
+NETWORK:
+*.rb
+
+FALLBACK:
+/images/avatars/ /generic_avatar.png
+/ /offline.html
+

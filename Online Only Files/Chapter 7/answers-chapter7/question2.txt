@@ -1,0 +1,16 @@
+﻿It depends on the type of triangle. If the triangle to be textured is a right triangle with the right angle on the top left, the coordinates in counterclockwise order would be:
+(0,0)
+(0,1)
+(1,1)
+
+If the right angle is on the bottom right, it would be
+(1,0)
+(0,1)
+(1,1)
+
+and so on if the right angle was bottom left or top right.
+
+For a regular triangle (one where all angles are 60 degrees), the coordinates would be
+(1,0)
+(1,1)
+(0.5,0)

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>Web Worker example</title>
+ </head>
+ <body>
+  <p>The time is now: <span id="result"></span></p>
+  <script>
+  
+    var socket = new WebSocket("ws://localhost:10081");
+    socket.onopen = function(evt) { console.log("Socket opened");};
+    socket.onclose = function(evt) {console.log("Socket closed");};
+    socket.onmessage = function(evt){console.log(evt.data);};
+    socket.onerror = function(evt) {console.log("Error: "+evt.data);};
+
+    socket.send("Hello World!");
+
+  </script>
+ </body>
+</html>

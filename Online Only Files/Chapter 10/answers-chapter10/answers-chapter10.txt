@@ -1,0 +1,26 @@
+Answers for Chapter 10
+
+1. The workaround is embedding audio using the video tag and calling play on that element.
+In HTML code:
+<video id=”sound1”  src=”sound.mp3”></video>
+In JS code:
+var vid = document.getElementById(“sound1”);
+vid.play();
+
+2.
+PhoneGap pros:
+-Able to use existing Android tools
+- After the setup scaffolding, it is very similar to developing a web app
+Cons
+- There is a bit more setup for a basic application
+- Components are not native
+
+Titanium Pros:
+- Android specific configuration is mostly handled seamlessly by the framework
+- Provides native components via its JavaScript API
+Cons:
+- A custom tool is needed to compile and run applications in the emulator
+- Compiling the application can be a bit slow and recompiles all assets even if you only changed HTML code.
+3. Lawnchair is closer to the IndexedDB specification than WebSQL. Also WebSQL has been fundamentally deprecated so it is good to  be structuring data in a NoSQL way. 
+
+4. Windows Phone 7 is not compliant with any HTML5 standards.

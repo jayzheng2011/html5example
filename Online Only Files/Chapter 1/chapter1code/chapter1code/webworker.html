@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>Web Worker example</title>
+ </head>
+ <body>
+  <p>The time is now: <span id="result"></span></p>
+  <script>
+  if (window.Worker) {
+    alert("worker supported");
+  }
+  else {
+    alert("no worker");
+  }
+   var worker = new Worker('worker.js');
+   alert("here");
+   worker.onmessage = function (event) {
+     document.getElementById('result').innerText = event.data;
+     //worker.terminate();
+   };
+  </script>
+ </body>
+</html>

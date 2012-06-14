@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Snowman Three.js Demo</title>
+		<script src="../Three.js"></script>
+		<script src="../zepto.min.js"></script>
+		<script src="../RequestAnimationFrame.js"></script>
+	</head>
+	<body>
+		<div id="container"/>
+		<script type="text/javascript">
+			var camera, scene, renderer, cylinder;
+		
+			function init() {
+				// scene size
+				var HEIGHT = 480
+				, WIDTH = 640;
+				
+				// camera properties
+				var FOV = 45
+				, ASPECT = WIDTH/HEIGHT
+				, NEAR = 0.1
+				, FAR = 10000;
+				
+				// create a renderer, camera, and scene
+				renderer = new THREE.WebGLRenderer();
+				renderer.setSize (WIDTH, HEIGHT);
+				camera = new THREE.Camera(FOV, ASPECT, NEAR, FAR);
+				camera.position.z = 100;
+				//camera.position.y = 30;
+				
+				scene = new THREE.Scene();
+				drawScene();
+				
+				// attach the scene to the DOM
+				$("#container").get(0).appendChild(renderer.domElement);
+			}
+			
+			function drawScene() {
+				var texture   = THREE.ImageUtils.loadTexture( "200407-bluemarble.jpg" );
+				var material = new THREE.MeshPhongMaterial( { color: 0xFFFFFF, ambient: 0xFFFFFF, map:texture } );
+				
+				cylinder = new THREE.Mesh(
+					new THREE.Cylinder(32, 20.5, 20.5, 32), material
+				);
+				cylinder.rotation.x = 90;
+				scene.addObject(cylinder);
+			}
+			
+			function animate() {
+				requestAnimationFrame (animate);
+				render();
+			}
+			
+			function render() {
+				renderer.render(scene, camera);
+			}
+			
+			init();
+			animate();
+		</script>
+		
+	<body>
+</html>

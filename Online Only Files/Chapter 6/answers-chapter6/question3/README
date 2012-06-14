@@ -1,0 +1,45 @@
+1. Extract the images for jokers from the SVG file using Inkscape:
+
+inkscape -f svg-cards.svg -i red_joker -e red_joker.png -d 90
+inkscape -f svg-cards.svg -i black_joker -e black_joker.png -d 90
+
+2. In Deck.js before the comment "Shuffle the decks", add the lines:
+
+for (var i = 0; i <numDecks; i++) {
+    self.cards.push(new Card("red","joker"));
+    self.cards.push(new Card("black","joker"));
+}
+
+3. Still in Deck.js, modify the shuffleDecks function:
+
+Change this:
+self.shuffleDecks = function () {
+        var swap = function(i,j) {
+            var temp = self.cards[j];
+            self.cards[j] = self.cards[i];
+            self.cards[i] = temp;
+        }
+        
+        for(var j = 0; j<numDecks; j++) {
+            for(var i = (numDecks * 51); i>=0; i--) {
+                var r = self.rand(i);
+                swap(i,r);
+            }
+        }
+    }
+
+to this:
+self.shuffleDecks = function () {
+        var swap = function(i,j) {
+            var temp = self.cards[j];
+            self.cards[j] = self.cards[i];
+            self.cards[i] = temp;
+        }
+        
+        for(var j = 0; j<numDecks; j++) {
+            for(var i = (numDecks * 53); i>=0; i--) {
+                var r = self.rand(i);
+                swap(i,r);
+            }
+        }
+    }

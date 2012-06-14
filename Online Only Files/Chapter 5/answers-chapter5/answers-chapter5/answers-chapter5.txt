@@ -1,0 +1,4 @@
+Chapter 6 Answers
+1. 290 * (PI/180) = (290/180) * PI = 1.611111*PI = 5.06145
+2. You would define a pair of audio channel for just the background sound like in the Copy Me game. Instead of playing the next tone when the first one ends, we would play the same background music. We would use a secondary set of channels for the other sounds.
+3. MIDI isn’t natively supported by browsers at this time. Even if it was there is no guarantee that the instrument you selected for the composition would be supported by the client’s browser. Creating a wave, mpg, or ogg file is safer.
